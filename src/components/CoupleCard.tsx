@@ -1,5 +1,4 @@
 import { css } from "@emotion/react";
-import Image from "next/image";
 import { FC } from "react";
 import FemaleSvg from "./images/female.svg";
 import MaleSvg from "./images/male.svg";
@@ -10,49 +9,39 @@ const pairsBlue03 = "#00c1d4";
 const red03 = "#ff6c65";
 const white = "#ffffff";
 
-export const CoupleCard: FC<{
-  femaleName: string;
-  femaleAge: string;
-  femaleResidence: string;
-  femaleJob: string;
-  femaleHobby: string;
-  maleName: string;
-  maleAge: string;
-  maleResidence: string;
-  maleJob: string;
-  maleHobby: string;
-}> = (props) => {
-  const {
-    femaleName,
-    femaleAge,
-    femaleResidence,
-    femaleJob,
-    femaleHobby,
-    maleName,
-    maleAge,
-    maleResidence,
-    maleJob,
-    maleHobby,
-  } = props;
+// CAUTION!!!
+// spanを使うとWordPressがpタグを自動挿入することがあるようだ
+// span使わないで
+export const CoupleCard: FC<> = (props) => {
+  const femaleName = "Rina";
+  const femaleAge = "27";
+  const femaleResidence = "兵庫県";
+  const femaleJob = "モデル";
+  const femaleHobby = "ワイン、お笑い、ダンス、DIY";
+  const maleName = "Shigeyasu";
+  const maleAge = "27";
+  const maleResidence = "滋賀県";
+  const maleJob = "会社員";
+  const maleHobby = "麻雀、お笑い、フットサル";
 
   return (
     <div
       css={css`
-        width: 100%;
+        /* width: 100%; */
         border-radius: 1rem;
         background-color: ${gray07};
         padding-left: 24px;
         padding-right: 24px;
         padding-bottom: 2rem;
         padding-top: 1.75rem;
-        margin: 1rem auto 2.5rem;
+        /* margin: 1rem auto 2.5rem; */
         @media (min-width: 1024px) {
           border-radius: 1.5rem;
           padding-left: 50px;
           padding-right: 50px;
           padding-bottom: 2.5rem;
           padding-top: 2rem;
-          margin: 1rem auto 2.5rem;
+          /* margin: 1rem auto 2.5rem; */
         }
       `}
     >
@@ -72,7 +61,11 @@ export const CoupleCard: FC<{
             flex-direction: column;
           `}
         >
-          <div>
+          <div
+            css={css`
+              height: 40px;
+            `}
+          >
             <FemaleSvg />
           </div>
           <div
@@ -87,19 +80,21 @@ export const CoupleCard: FC<{
               }
             `}
           >
-            <span
+            <div
               css={css`
                 font-weight: 700;
+                display: inline-block;
               `}
             >
               {femaleName}
-            </span>
-            <span
+            </div>
+            <div
               css={css`
                 margin-left: 0.125rem;
                 vertical-align: middle;
                 font-size: 0.75rem;
                 line-height: 1.375rem;
+                display: inline-block;
                 @media (min-width: 1024px) {
                   font-size: 0.875rem;
                   line-height: 1.25rem;
@@ -107,7 +102,7 @@ export const CoupleCard: FC<{
               `}
             >
               さん
-            </span>
+            </div>
           </div>
           <ul
             css={css`
@@ -148,7 +143,11 @@ export const CoupleCard: FC<{
             flex-direction: column;
           `}
         >
-          <div>
+          <div
+            css={css`
+              height: 40px;
+            `}
+          >
             <MaleSvg />
           </div>
           <div
@@ -163,19 +162,21 @@ export const CoupleCard: FC<{
               }
             `}
           >
-            <span
+            <div
               css={css`
                 font-weight: 700;
+                display: inline-block;
               `}
             >
               {maleName}
-            </span>
-            <span
+            </div>
+            <div
               css={css`
                 margin-left: 0.125rem;
                 vertical-align: middle;
                 font-size: 0.75rem;
                 line-height: 1.375rem;
+                display: inline-block;
                 @media (min-width: 1024px) {
                   font-size: 0.875rem;
                   line-height: 1.25rem;
@@ -183,7 +184,7 @@ export const CoupleCard: FC<{
               `}
             >
               さん
-            </span>
+            </div>
           </div>
           <ul
             css={css`
