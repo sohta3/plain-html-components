@@ -1,8 +1,8 @@
 import { css } from "@emotion/react";
 import Image from "next/image";
 import { FC } from "react";
-import femaleSvg from "./images/female.svg";
-import maleSvg from "./images/male.svg";
+import FemaleSvg from "./images/female.svg";
+import MaleSvg from "./images/male.svg";
 
 const gray00 = "#0a2c2f";
 const gray07 = "#f4fbfb";
@@ -73,7 +73,7 @@ export const CoupleCard: FC<{
           `}
         >
           <div>
-            <Image src={femaleSvg} alt="女性" width={40} height={40} />
+            <FemaleSvg />
           </div>
           <div
             css={css`
@@ -149,12 +149,7 @@ export const CoupleCard: FC<{
           `}
         >
           <div>
-            <Image
-              src="https://storage.googleapis.com/studio-design-asset-files/projects/xPORzV2nOr/s-40x40_dc934974-4bab-4bcf-8528-d490e3586cdb.svg"
-              alt="男性"
-              width={40}
-              height={40}
-            />
+            <MaleSvg />
           </div>
           <div
             css={css`
